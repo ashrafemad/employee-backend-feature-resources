@@ -37,6 +37,10 @@ class Employee(models.Model):
     def __str__(self):
         return self.full_name
 
+    class Meta:
+        verbose_name = 'Employee'
+        verbose_name_plural = 'Employees'
+
 
 class SalaryOthers(models.Model):
     employee = models.ForeignKey(Employee, on_delete=models.CASCADE, related_name='others')
